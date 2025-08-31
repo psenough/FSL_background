@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel=icon type=image/png sizes=32x32 href="/images/favicon-32x32.png">
+        <link rel=icon type=image/png sizes=32x32 href="./images/favicon-32x32.png">
         <meta charset="UTF-8" />
         <title>FSL background</title>
         <style>
 			@font-face {
 				font-family: 'League Gothic';
-				src: url('/fonts/LeagueGothic-Regular.ttf');
+				src: url('./fonts/LeagueGothic-Regular.ttf');
 			}
             body,
             html {
@@ -51,7 +51,7 @@
     <body>
         <canvas id="glCanvas"></canvas>
 		<div id="title">Speaker Banana Monteiro da Costa Aires e Azevedo e Cunha</div>
-		<div id="logo"><img src="/images/logo_full.svg" alt="Festa do Software Livre 2025" style="height:5em"></div>
+		<div id="logo"><img src="./images/logo_full.svg" alt="Festa do Software Livre 2025" style="height:5em"></div>
         <script>
 
 			const urlParams = new URLSearchParams(location.search);
@@ -146,8 +146,8 @@
 
                 // 2) Fetch external GLSL source files
                 const [vertSrc, fragSrc] = await Promise.all([
-                    loadText('shaders/clouds.vert.glsl'),
-                    loadText('shaders/clouds.frag.glsl'),
+                    loadText('./shaders/clouds.vert.glsl'),
+                    loadText('./shaders/clouds.frag.glsl'),
                 ]);
 
                 // 3) Compile & link the program using loaded sources
