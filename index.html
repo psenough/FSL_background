@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel=icon type=image/png sizes=32x32 href=/images/favicon-32x32.png>
+        <link rel=icon type=image/png sizes=32x32 href="/images/favicon-32x32.png">
         <meta charset="UTF-8" />
         <title>FSL background</title>
         <style>
+			@font-face {
+				font-family: 'League Gothic';
+				src: url('/fonts/LeagueGothic-Regular.ttf');
+			}
             body,
             html {
                 margin: 0;
@@ -18,7 +22,6 @@
                 height: 100vh;
 				z-index: 8;
             }
-
 			#title {
 				position: absolute;
 				display: flex;
@@ -27,7 +30,7 @@
 				flex-direction: column;
 				top: 0px;
 				left: 0px;
-				color: #243572; //#6AA9DB;
+				color: white;
 				margin: auto;
 				text-align: center;
 				vertical-align: middle;
@@ -35,7 +38,8 @@
 				height: 100%;
 				z-index: 10;
 				font-size: 100pt;
-				text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+				// text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+				font-family: "League Gothic", "apple-system", "Segoe UI", "Roboto", "Oxygen", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 			}
 			#logo {
 				position: absolute;
@@ -47,7 +51,7 @@
     <body>
         <canvas id="glCanvas"></canvas>
 		<div id="title">Speaker Banana Monteiro da Costa Aires e Azevedo e Cunha</div>
-		<div id="logo"><img src="images/logo_full.svg" alt="Festa do Software Livre 2025" style="height:5em"></div>
+		<div id="logo"><img src="/images/logo_full.svg" alt="Festa do Software Livre 2025" style="height:5em"></div>
         <script>
 
 			const urlParams = new URLSearchParams(location.search);
@@ -142,8 +146,8 @@
 
                 // 2) Fetch external GLSL source files
                 const [vertSrc, fragSrc] = await Promise.all([
-                    loadText('shaders/basic.vert.glsl'),
-                    loadText('shaders/basic.frag.glsl'),
+                    loadText('shaders/clouds.vert.glsl'),
+                    loadText('shaders/clouds.frag.glsl'),
                 ]);
 
                 // 3) Compile & link the program using loaded sources
